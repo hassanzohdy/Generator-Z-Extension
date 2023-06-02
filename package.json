@@ -4,7 +4,7 @@
     "description": "The next generator tool.",
     "version": "4.0.0",
     "engines": {
-        "vscode": "^1.x.0"
+        "vscode": "^1.77.0"
     },
     "publisher": "hassanzohdy",
     "categories": [
@@ -120,7 +120,7 @@
         "@types/glob": "^8.1.0",
         "@types/mocha": "^10.0.1",
         "@types/node": "20.x",
-        "@types/vscode": "^1.78.1",
+        "@types/vscode": "^1.77.1",
         "@typescript-eslint/eslint-plugin": "^5.59.8",
         "@typescript-eslint/parser": "^5.59.8",
         "@vscode/test-electron": "^2.3.2",
