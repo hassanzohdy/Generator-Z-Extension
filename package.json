@@ -1,0 +1,67 @@
+{
+    "name": "gnz",
+    "displayName": "Generator Z",
+    "description": "The next generator tool.",
+    "version": "4.0.0",
+    "engines": {
+      "vscode": "^1.77.0"
+    },
+    "publisher": "hassanzohdy",
+    "categories": [
+      "Other"
+    ],
+    "icon": "./logo.png",
+    "license": "MIT",
+    "main": "./dist/extension.js",
+    "repository": {
+      "url": "https://github.com/hassanzohdy/Generator-Z-Extension",
+      "type": "git"
+    },
+    "contributes": {
+      "commands": [
+        {
+          "command": "extension.generateReactComponent",
+          "title": "Generate React Component"
+        }
+      ],
+      "menus": {
+        "explorer/context": [
+          {
+            "command": "extension.generateReactComponent",
+            "when": "explorerResourceIsFolder",
+            "group": "0_navigation@1"
+          }
+        ]
+      }
+    },
+    "scripts": {
+      "vscode:prepublish": "yarn run package",
+      "compile": "webpack",
+      "watch": "webpack --watch",
+      "package": "webpack --mode production --devtool hidden-source-map",
+      "compile-tests": "tsc -p . --outDir out",
+      "watch-tests": "tsc -p . -w --outDir out",
+      "pretest": "yarn run compile-tests && yarn run compile && yarn run lint",
+      "lint": "eslint src --ext ts",
+      "test": "node ./out/test/runTest.js"
+    },
+    "devDependencies": {
+      "@types/glob": "^8.1.0",
+      "@types/mocha": "^10.0.1",
+      "@types/node": "16.x",
+      "@types/vscode": "^1.77.0",
+      "@typescript-eslint/eslint-plugin": "^5.59.1",
+      "@typescript-eslint/parser": "^5.59.1",
+      "@vscode/test-electron": "^2.3.0",
+      "eslint": "^8.39.0",
+      "glob": "^8.1.0",
+      "mocha": "^10.2.0",
+      "ts-loader": "^9.4.2",
+      "typescript": "^4.4.3",
+      "webpack": "^5.81.0",
+      "webpack-cli": "^5.0.2"
+    },
+    "dependencies": {
+      "@mongez/gnz": "^1.0.0"
+    }
+  }
