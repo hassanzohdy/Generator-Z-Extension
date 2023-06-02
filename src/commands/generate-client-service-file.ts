@@ -19,7 +19,7 @@ export async function generateClientServiceFile({ path }: any) {
   // now ask the user to enter the name of the service name
   const serviceName = await vscode.window.showInputBox({
     prompt: "Enter the name of the service class",
-    placeHolder: "UsersService",
+    placeHolder: "users",
     validateInput: (text: string) => {
       return text ? null : "Please enter a valid service name";
     },
