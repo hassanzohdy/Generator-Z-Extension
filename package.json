@@ -3,6 +3,9 @@
     "displayName": "Generator Z",
     "description": "The next generator tool.",
     "version": "4.0.0",
+    "engines": {
+        "vscode": "^1.x.0"
+    },
     "publisher": "hassanzohdy",
     "categories": [
         "Other"
