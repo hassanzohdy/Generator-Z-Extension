@@ -18,6 +18,8 @@ export function generateAngularComponent() {
       },
     });
 
+    console.log({ componentName });
+
     if (!componentName) {
       return;
     }
@@ -40,14 +42,8 @@ export function generateAngularComponent() {
     );
 
     const command = `npx ng generate component ${componentName} ${
-      options.some((opt: any) => opt.label === "withSpec" && !opt.picked)
-        ? "--skip-tests"
-        : ""
-    } ${
-      options.some((opt: any) => opt.label === "withStyle" && opt.picked)
-        ? "--style=scss"
-        : ""
-    }`;
+      options.withSpec ? "--skip-tests" : ""
+    } ${options.withStyle ? "--style=scss" : ""}`;
 
     vscode.window.withProgress(
       {
@@ -55,6 +51,8 @@ export function generateAngularComponent() {
         title: "Generating Component...",
       },
       async () => {
+        console.log("command", command);
+
         exec(command, { cwd: path }, (error, stdout, stderr) => {
           if (error) {
             console.log(error);
