@@ -50,24 +50,26 @@ export function generateAngularComponent() {
         location: vscode.ProgressLocation.Notification,
         title: "Generating Component...",
       },
-      async () => {
-        console.log("command", command);
-
-        exec(command, { cwd: path }, (error, stdout, stderr) => {
-          if (error) {
-            console.log(error);
-            vscode.window.showErrorMessage(
-              `Error generating component: ${error.message}`
+      () => {
+        return new Promise((resolve) => {
+          exec(command, { cwd: path }, (error, stdout, stderr) => {
+            if (error) {
+              console.log(error);
+              vscode.window.showErrorMessage(
+                `Error generating component: ${error.message}`
+              );
+              return;
+            }
+            if (stderr) {
+              vscode.window.showErrorMessage(`Error: ${stderr}`);
+              return;
+            }
+            vscode.window.showInformationMessage(
+              `Component '${componentName}' has been generated successfully.`
             );
-            return;
-          }
-          if (stderr) {
-            vscode.window.showErrorMessage(`Error: ${stderr}`);
-            return;
-          }
-          vscode.window.showInformationMessage(
-            `Component '${componentName}' has been generated successfully.`
-          );
+
+            resolve(true);
+          });
         });
       }
     );
