@@ -24,16 +24,22 @@ export function generateWarlockRequestHandler(
       return;
     }
 
-    await gnz.execute(
-      generateWarlockHandler.execute({
-        saveTo: path,
-        name: moduleName,
-        ...defaultOptions,
-      })
-    );
+    try {
+      await gnz.execute(
+        generateWarlockHandler.execute({
+          saveTo: path,
+          name: moduleName,
+          ...defaultOptions,
+        })
+      );
 
-    vscode.window.showInformationMessage(
-      `Handler has been generated successfully.`
-    );
+      vscode.window.showInformationMessage(
+        `Handler has been generated successfully.`
+      );
+    } catch (error: any) {
+      vscode.window.showErrorMessage(
+        `An error occurred while generating the handler: ${error.message}`
+      );
+    }
   };
 }

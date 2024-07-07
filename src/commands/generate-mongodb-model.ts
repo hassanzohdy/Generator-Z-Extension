@@ -7,10 +7,6 @@ import { preparePath } from "../utils/prepare-path";
 export async function generateMongoDBModelTemplate(options: any = {}) {
   const path = preparePath(options.path);
 
-  console.log("=======");
-  console.log(path);
-  console.log("=======");
-
   const collectionName = await vscode.window.showInputBox({
     prompt: "Enter the collection name of the model",
     placeHolder: "users",

@@ -4,6 +4,7 @@ import { gnz, generateReactiveFormComponent } from "@mongez/gnz";
 import * as vscode from "vscode";
 import { preparePath } from "../utils/prepare-path";
 import type { ReactiveFormComponentOptions } from "@mongez/gnz";
+import { withIndexOptionPicker } from "../utils/with-index-option-selection";
 
 export function generateReactiveForm(
   defaultOptions: Partial<ReactiveFormComponentOptions> = {
@@ -32,6 +33,7 @@ export function generateReactiveForm(
         inputs: {
           name: "text",
         },
+        withIndex: await withIndexOptionPicker(),
         name: componentName,
         ...defaultOptions,
       })

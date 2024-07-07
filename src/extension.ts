@@ -14,21 +14,24 @@ import { generateWarlockRestfulHandler } from "./commands/generate-warlock-restf
 import { generateWarlockOutputHandler } from "./commands/generate-warlock-output";
 import { generateWarlockRepositoryHandler } from "./commands/generate-warlock-repository";
 import { generateWarlockModuleHandler } from "./commands/generate-warlock-module";
+import { generateNextjsClientComponent } from "./commands/generate-nextjs-client-component";
+import { generateNextjsServerComponent } from "./commands/generate-nextjs-server-component";
+import { generateQwikComponent } from "./commands/qwik/generate-qwik-component";
+import { generateQwikPage } from "./commands/qwik/generate-qwik-page";
+import { generateAngularComponent } from "./commands/angular/generate-angular-component";
 
 const commands: any = {
-  generateReactComponent: generateReactComponent({
-    memo: false,
-    forwardRef: false,
-  }),
-  generateReactMemoComponent: generateReactComponent({ memo: true }),
-  generateReactForwardRefComponent: generateReactComponent({
-    forwardRef: true,
-  }),
-  generateReactWithMemoAndForwardRefComponent: generateReactComponent({
-    memo: true,
-    forwardRef: true,
-  }),
-  generateMongoDBModel: generateMongoDBModelTemplate,
+  generateReactComponent: generateReactComponent(),
+  generateNextjsClientComponent: generateNextjsClientComponent(),
+  generateNextjsServerComponent: generateNextjsServerComponent(),
+  generateCascadeModel: generateMongoDBModelTemplate,
+  generateAngularComponent: generateAngularComponent(),
+  // generateAngularModule: generateAngularModule,
+  // generateAngularDirective: generateAngularDirective,
+  // generateAngularService: generateAngularService,
+  // generateAngularPipe: generateAngularPipe,
+  // generateAngularGuard: generateAngularGuard,
+  // generateAngularInterceptor: generateAngularInterceptor,
   generateClientService: generateClientServiceFile,
   generateRestfulService: generateClientRestfulService,
   generateReactMongezModule: generateReactMongezModule(),
@@ -39,13 +42,12 @@ const commands: any = {
   generateWarlockHandler: generateWarlockRequestHandler(),
   generateWarlockHandlerWithValidation: generateWarlockRequestHandler({
     withValidation: true,
-    rules: {
-      name: ['required', 'string']
-    },
   }),
   generateWarlockRestfulHandler: generateWarlockRestfulHandler(),
   generateWarlockOutput: generateWarlockOutputHandler(),
   generateWarlockRepository: generateWarlockRepositoryHandler(),
+  generateQwikComponent: generateQwikComponent(),
+  generateQwikPage: generateQwikPage(),
 };
 
 // This method is called when your extension is activated

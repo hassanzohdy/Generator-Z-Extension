@@ -38,8 +38,8 @@ export async function generateClientServiceFile({ path }: any) {
   const endpointPath = await vscode.window.showInputBox({
     prompt:
       "Enter the endpoint path of the service",
-    placeHolder: "shared/endpoints",
-    value: "shared/endpoints",
+    placeHolder: "shared/endpoint",
+    value: "shared/endpoint",
   });
 
   await gnz.execute(

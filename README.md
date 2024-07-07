@@ -2,32 +2,19 @@
 
 This extension provides a quick way to generate templates directly into your project either by using the command palette or by right clicking on the directory you want to create the template.
 
-## Generating React Component
+## Current generated templates
 
-Just right click on the directory you want to create the component and select the option `Generate React Component`, now select one of the following options:
+- ⚛️ Generating React Component with options: memo, Ref Forwarding, props, and index file.
+- ⏭️ Generating Nextjs client/service component
+- 🌐 Generate Http Service to create an http (using axios) api file for API calls
+- 🅰️ Generate Angular Component
+- 🚀 Generate Qwik Page And Component
+- ⚡ Generate Cascade Model: to generate a [Database Model](https://warlock.js.org/docs/cascade/getting-started/introduction/)
+- ⚡ Generate Warlock Module: to generate a [Warlock.js](https://warlock.js.org) module
 
-- Generate Basic React Component: This generates a basic React Component.
-- Generate React Component with memo: This generates a React Component with memo.
-- Generate React Component with forwardRef: This generates a React Component with forwardRef.
-- Generate React Component with memo and forwardRef: This generates a React Component with memo and forwardRef.
+## How to use
 
-> Please note that all generated components are created in a folder with index.ts file thus you may add more sub components to that component.
-
-In the near future, I will add more options to generate other templates.
-
-## Generating Http Services
-
-Most apps requires API connection, by using [Mongez Http](https://github.com/hassanzohdy/mongez-http) you can easily manage your API requests, this dropdown contains two options:
-
-- `Generate Client Service File (Mongez)`: This generates a basic Http Service with two functions: `getXList` which may receive an object for params to list data, and `getX` which receives the id of the item you want to get.
-- `Generate Restful Service (Mongez)`: This generates a restful endpoint class, which automatically provides you with `list`, `get`, `create`, `update`, and `delete` functions based on the given route.
-
-> The first prompt asks for the service file name, second prompt asks for the route, if left blank, then it will be generated from the given service file name.
-> The Third prompt asks for the base endpoint file location, the endpoint object must be exported as default from tht path, defaults to `shared/endpoint`.
-
-## Generate MongoDB Model
-
-If you're using [Mongez MongoDB](https://github.com/hassanzohdy/mongodb), you can easily create a model by using `Generate MongoDB Model` command or by right click on the folder that you want to create the model inside, all you need to insert is the collection name for database, (`It should be in plural form`).
+Just write click on the folder you want to create the template and select the template you want to generate.
 
 ## Contributing
 
@@ -35,6 +22,11 @@ If you'd like to contribute to this extension, please feel free to submit a pull
 
 ## Release Notes
 
+- V8 (02 Dec 2023)
+  - Added Qwik Components And Pages Generator.
+- V7 (16 Sept 2023)
+  - Added wether to create component with index file or not.
+  - Added `Generate Nextjs Client Component` command.
 - V4 (02 June 2023)
   - Added `Generate MongoDB Model` command.
 - V3 (31 May 2023)
