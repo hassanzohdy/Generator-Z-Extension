@@ -1,261 +1,261 @@
 {
-  "name": "gnz",
-  "displayName": "Generator Z",
-  "description": "The next template generator tool.",
-  "version": "10.0.3",
-  "engines": {
-    "vscode": "^1.50.0"
-  },
-  "publisher": "hassanzohdy",
-  "categories": [
-    "Other"
-  ],
-  "icon": "./logo.png",
-  "license": "MIT",
-  "main": "./dist/extension.js",
-  "repository": {
-    "url": "https://github.com/hassanzohdy/Generator-Z-Extension",
-    "type": "git"
-  },
-  "contributes": {
-    "commands": [
-      {
-        "command": "generateReactComponent",
-        "title": "⚛️ Generate React Component"
-      },
-      {
-        "command": "generateClientService",
-        "title": "Generate Client Service"
-      },
-      {
-        "command": "generateRestfulService",
-        "title": "Generate Restful Service"
-      },
-      {
-        "command": "generateReactMongezModule",
-        "title": "⚛️ Generate Mongez React Module"
-      },
-      {
-        "command": "generateReactiveFormComponent",
-        "title": "Generate Reactive Form Component"
-      },
-      {
-        "command": "generateSuperTableComponent",
-        "title": "Generate Super Table Component"
-      },
-      {
-        "command": "generateMoonlightModule",
-        "title": "Generate React Moonlight Module"
-      },
-      {
-        "command": "generateQwikPage",
-        "title": "🚀 Generate Qwik Page"
-      },
-      {
-        "command": "generateQwikComponent",
-        "title": "🚀 Generate Qwik Component"
-      },
-      {
-        "command": "generateAngularComponent",
-        "title": "🅰️ Generate Angular Component"
-      },
-      {
-        "command": "generateCascadeModel",
-        "title": "⚡ Generate Cascade Model"
-      },
-      {
-        "command": "generateWarlockModule",
-        "title": "⚡ Generate Warlock Module"
-      },
-      {
-        "command": "generateWarlockHandler",
-        "title": "Generate Warlock Request Handler"
-      },
-      {
-        "command": "generateWarlockHandlerWithValidation",
-        "title": "Generate Warlock Request Handler With Validation"
-      },
-      {
-        "command": "generateWarlockRestfulHandler",
-        "title": "Generate Warlock Restful Request"
-      },
-      {
-        "command": "generateWarlockRepository",
-        "title": "Generate Warlock Repository"
-      },
-      {
-        "command": "generateWarlockOutput",
-        "title": "Generate Warlock Output"
-      },
-      {
-        "command": "generateNextjsClientComponent",
-        "title": "Generate Client Component"
-      },
-      {
-        "command": "generateNextjsServerComponent",
-        "title": "Generate Server Component"
-      }
-    ],
-    "submenus": [
-      {
-        "id": "generateNextJsComponent",
-        "label": "⏭️ Generate Nextjs Component"
-      },
-      {
-        "id": "generateMoonlightModule",
-        "label": "⚛️ Generate Moonlight (React)"
-      },
-      {
-        "id": "generateHttpService",
-        "label": "🌐 Generate Http Service"
-      },
-      {
-        "id": "generateWarlockModule",
-        "label": "⚡ Generate Warlock Module"
-      }
-    ],
-    "menus": {
-      "generateNextJsComponent": [
-        {
-          "command": "generateNextjsClientComponent",
-          "group": "0_navigation@1"
-        },
-        {
-          "command": "generateNextjsServerComponent",
-          "group": "0_navigation@2"
-        }
-      ],
-      "generateHttpService": [
-        {
-          "command": "generateClientService"
-        },
-        {
-          "command": "generateRestfulService"
-        }
-      ],
-      "generateMoonlightModule": [
-        {
-          "command": "generateSuperTableComponent"
-        },
-        {
-          "command": "generateReactiveFormComponent"
-        },
-        {
-          "command": "generateMoonlightModule"
-        }
-      ],
-      "generateWarlockModule": [
-        {
-          "command": "generateWarlockModule"
-        },
-        {
-          "command": "generateWarlockHandler"
-        },
-        {
-          "command": "generateWarlockHandlerWithValidation"
-        },
-        {
-          "command": "generateWarlockRestfulHandler"
-        },
-        {
-          "command": "generateWarlockRepository"
-        },
-        {
-          "command": "generateWarlockOutput"
-        }
-      ],
-      "explorer/context": [
-        {
-          "command": "generateReactComponent",
-          "when": "explorerResourceIsFolder",
-          "group": "0_navigation@1"
-        },
-        {
-          "command": "generateReactMongezModule",
-          "when": "explorerResourceIsFolder",
-          "group": "0_navigation@2"
-        },
-        {
-          "submenu": "generateMoonlightModule",
-          "when": "explorerResourceIsFolder",
-          "group": "0_navigation@3"
-        },
-        {
-          "submenu": "generateNextJsComponent",
-          "when": "explorerResourceIsFolder",
-          "group": "0_navigation@4"
-        },
-        {
-          "command": "generateQwikComponent",
-          "when": "explorerResourceIsFolder",
-          "group": "0_navigation@5"
-        },
-        {
-          "command": "generateQwikPage",
-          "when": "explorerResourceIsFolder",
-          "group": "0_navigation@6"
-        },
-        {
-          "command": "generateAngularComponent",
-          "when": "explorerResourceIsFolder",
-          "group": "0_navigation@7"
-        },
-        {
-          "submenu": "generateHttpService",
-          "when": "explorerResourceIsFolder",
-          "group": "0_navigation@8"
-        },
-        {
-          "command": "generateCascadeModel",
-          "when": "explorerResourceIsFolder",
-          "group": "0_navigation@9"
-        },
-        {
-          "submenu": "generateWarlockModule",
-          "when": "explorerResourceIsFolder",
-          "group": "0_navigation@10"
-        }
-      ]
-    }
-  },
-  "activationEvents": [],
-  "scripts": {
-    "vscode:prepublish": "yarn run package",
-    "compile": "webpack",
-    "watch": "webpack --watch",
-    "package": "webpack --mode production --devtool hidden-source-map",
-    "compile-tests": "tsc -p . --outDir out",
-    "watch-tests": "tsc -p . -w --outDir out",
-    "pretest": "yarn run compile-tests && yarn run compile && yarn run lint",
-    "lint": "eslint src --ext ts",
-    "prod.package": "npx vsce package",
-    "prod.publish": "npx vsce publish",
-    "prod": "npx vsce publish",
-    "test": "node ./out/test/runTest.js"
-  },
-  "devDependencies": {
-    "@types/glob": "^8.1.0",
-    "@types/mocha": "^10.0.1",
-    "@types/node": "20.x",
-    "@types/pluralize": "^0.0.29",
-    "@types/vscode": "^1.50.0",
-    "@typescript-eslint/eslint-plugin": "^5.59.8",
-    "@typescript-eslint/parser": "^5.59.8",
-    "@vscode/test-electron": "^2.3.2",
-    "@vscode/vsce": "^2.19.0",
-    "eslint": "^8.41.0",
-    "glob": "^10.2.6",
-    "mocha": "^10.2.0",
-    "ts-loader": "^9.4.3",
-    "typescript": "^5.1.3",
-    "webpack": "^5.85.0",
-    "webpack-cli": "^5.1.2"
-  },
-  "dependencies": {
-    "@mongez/gnz": "^5.0.24",
-    "@mongez/reinforcements": "^2.3.7",
-    "eslint-plugin-react": "^7.32.2",
-    "pluralize": "^8.0.0",
-    "react": "^18.2.0"
-  }
+	"name": "gnz",
+	"displayName": "Generator Z",
+	"description": "The next template generator tool.",
+	"version": "10.0.3",
+	"engines": {
+		"vscode": "^1.50.0"
+	},
+	"publisher": "hassanzohdy",
+	"categories": [
+		"Other"
+	],
+	"icon": "./logo.png",
+	"license": "MIT",
+	"main": "./dist/extension.js",
+	"repository": {
+		"url": "https://github.com/hassanzohdy/Generator-Z-Extension",
+		"type": "git"
+	},
+	"contributes": {
+		"commands": [
+			{
+				"command": "generateReactComponent",
+				"title": "⚛️ Generate React Component"
+			},
+			{
+				"command": "generateClientService",
+				"title": "Generate Client Service"
+			},
+			{
+				"command": "generateRestfulService",
+				"title": "Generate Restful Service"
+			},
+			{
+				"command": "generateReactMongezModule",
+				"title": "⚛️ Generate Mongez React Module"
+			},
+			{
+				"command": "generateReactiveFormComponent",
+				"title": "Generate Reactive Form Component"
+			},
+			{
+				"command": "generateSuperTableComponent",
+				"title": "Generate Super Table Component"
+			},
+			{
+				"command": "generateMoonlightModule",
+				"title": "Generate React Moonlight Module"
+			},
+			{
+				"command": "generateQwikPage",
+				"title": "🚀 Generate Qwik Page"
+			},
+			{
+				"command": "generateQwikComponent",
+				"title": "🚀 Generate Qwik Component"
+			},
+			{
+				"command": "generateAngularComponent",
+				"title": "🅰️ Generate Angular Component"
+			},
+			{
+				"command": "generateCascadeModel",
+				"title": "⚡ Generate Cascade Model"
+			},
+			{
+				"command": "generateWarlockModule",
+				"title": "⚡ Generate Warlock Module"
+			},
+			{
+				"command": "generateWarlockHandler",
+				"title": "Generate Warlock Request Handler"
+			},
+			{
+				"command": "generateWarlockHandlerWithValidation",
+				"title": "Generate Warlock Request Handler With Validation"
+			},
+			{
+				"command": "generateWarlockRestfulHandler",
+				"title": "Generate Warlock Restful Request"
+			},
+			{
+				"command": "generateWarlockRepository",
+				"title": "Generate Warlock Repository"
+			},
+			{
+				"command": "generateWarlockOutput",
+				"title": "Generate Warlock Output"
+			},
+			{
+				"command": "generateNextjsClientComponent",
+				"title": "Generate Client Component"
+			},
+			{
+				"command": "generateNextjsServerComponent",
+				"title": "Generate Server Component"
+			}
+		],
+		"submenus": [
+			{
+				"id": "generateNextJsComponent",
+				"label": "⏭️ Generate Nextjs Component"
+			},
+			{
+				"id": "generateMoonlightModule",
+				"label": "⚛️ Generate Moonlight (React)"
+			},
+			{
+				"id": "generateHttpService",
+				"label": "🌐 Generate Http Service"
+			},
+			{
+				"id": "generateWarlockModule",
+				"label": "⚡ Generate Warlock Module"
+			}
+		],
+		"menus": {
+			"generateNextJsComponent": [
+				{
+					"command": "generateNextjsClientComponent",
+					"group": "0_navigation@1"
+				},
+				{
+					"command": "generateNextjsServerComponent",
+					"group": "0_navigation@2"
+				}
+			],
+			"generateHttpService": [
+				{
+					"command": "generateClientService"
+				},
+				{
+					"command": "generateRestfulService"
+				}
+			],
+			"generateMoonlightModule": [
+				{
+					"command": "generateSuperTableComponent"
+				},
+				{
+					"command": "generateReactiveFormComponent"
+				},
+				{
+					"command": "generateMoonlightModule"
+				}
+			],
+			"generateWarlockModule": [
+				{
+					"command": "generateWarlockModule"
+				},
+				{
+					"command": "generateWarlockHandler"
+				},
+				{
+					"command": "generateWarlockHandlerWithValidation"
+				},
+				{
+					"command": "generateWarlockRestfulHandler"
+				},
+				{
+					"command": "generateWarlockRepository"
+				},
+				{
+					"command": "generateWarlockOutput"
+				}
+			],
+			"explorer/context": [
+				{
+					"command": "generateReactComponent",
+					"when": "explorerResourceIsFolder",
+					"group": "0_navigation@1"
+				},
+				{
+					"command": "generateReactMongezModule",
+					"when": "explorerResourceIsFolder",
+					"group": "0_navigation@2"
+				},
+				{
+					"submenu": "generateMoonlightModule",
+					"when": "explorerResourceIsFolder",
+					"group": "0_navigation@3"
+				},
+				{
+					"submenu": "generateNextJsComponent",
+					"when": "explorerResourceIsFolder",
+					"group": "0_navigation@4"
+				},
+				{
+					"command": "generateQwikComponent",
+					"when": "explorerResourceIsFolder",
+					"group": "0_navigation@5"
+				},
+				{
+					"command": "generateQwikPage",
+					"when": "explorerResourceIsFolder",
+					"group": "0_navigation@6"
+				},
+				{
+					"command": "generateAngularComponent",
+					"when": "explorerResourceIsFolder",
+					"group": "0_navigation@7"
+				},
+				{
+					"submenu": "generateHttpService",
+					"when": "explorerResourceIsFolder",
+					"group": "0_navigation@8"
+				},
+				{
+					"command": "generateCascadeModel",
+					"when": "explorerResourceIsFolder",
+					"group": "0_navigation@9"
+				},
+				{
+					"submenu": "generateWarlockModule",
+					"when": "explorerResourceIsFolder",
+					"group": "0_navigation@10"
+				}
+			]
+		}
+	},
+	"activationEvents": [],
+	"scripts": {
+		"vscode:prepublish": "yarn run package",
+		"compile": "webpack",
+		"watch": "webpack --watch",
+		"package": "webpack --mode production --devtool hidden-source-map",
+		"compile-tests": "tsc -p . --outDir out",
+		"watch-tests": "tsc -p . -w --outDir out",
+		"pretest": "yarn run compile-tests && yarn run compile && yarn run lint",
+		"lint": "eslint src --ext ts",
+		"prod.package": "npx vsce package",
+		"prod.publish": "npx vsce publish",
+		"prod": "npx vsce publish",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^8.1.0",
+		"@types/mocha": "^10.0.1",
+		"@types/node": "20.x",
+		"@types/pluralize": "^0.0.29",
+		"@types/vscode": "^1.50.0",
+		"@typescript-eslint/eslint-plugin": "^5.59.8",
+		"@typescript-eslint/parser": "^5.59.8",
+		"@vscode/test-electron": "^2.3.2",
+		"@vscode/vsce": "^2.19.0",
+		"eslint": "^8.41.0",
+		"glob": "^10.2.6",
+		"mocha": "^10.2.0",
+		"ts-loader": "^9.4.3",
+		"typescript": "^5.1.3",
+		"webpack": "^5.85.0",
+		"webpack-cli": "^5.1.2"
+	},
+	"dependencies": {
+		"@mongez/gnz": "^6.0.0",
+		"@mongez/reinforcements": "^2.3.7",
+		"eslint-plugin-react": "^7.32.2",
+		"pluralize": "^8.0.0",
+		"react": "^18.2.0"
+	}
 }
